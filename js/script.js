@@ -8,9 +8,11 @@ function veggie(result){
 }
 
 function bName(result){
-    if( result === "Captain Combustible"){
+    var cleanedResult = result.toLowerCase();
+    cleanedResult = $.trim(cleanedResult);
+    if( cleanedResult === "captain combustible"){
         return 0;
-    } else if( result === "Professor Brainstorm"){
+    } else if( cleanedResult === "professor brainstorm"){
         return 1
     }
 }
@@ -32,6 +34,13 @@ $(document).ready(function() {
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var totalScore = veggie(q1Result) + bName(q2Result) + colour(q3Result);
-        console.log('total score: ', totalScore)
+        console.log('total score: ', totalScore);
+        console.log(veggie(q1Result), bName(q2Result), colour(q3Result));
+        
+        if(totalScore === 0 || totalScore === 1){
+            $(".result").text("You Are A Plant Hero")
+        } else {
+            $(".result").text("You Are A Zombie Hero")
+        }
     });
 });

@@ -39,6 +39,8 @@ a {
 
 .result {
    text-align:center;
+   font-size: 45px;
+   font-weight: bold;
 }
 
 button {
@@ -52,6 +54,6 @@ button {
 }
 
 body{
-
+    background-color: orange;
     margin-left:20px;
 }
